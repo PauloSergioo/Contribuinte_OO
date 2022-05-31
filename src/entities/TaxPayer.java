@@ -98,16 +98,4 @@ public class TaxPayer {
 	public double netTax() {
 		return grossTax()  - taxRebate();
 	}
-
-	public String statusGrossTax() {
-		return "Imposto bruto total: %.2f%n" + grossTax(); 
-	}
-	
-	public String statusTaxRebate() {
-		return "Imposto bruto total: %.2f%n" + taxRebate();
-	}
-	
-	public String statusNetTax() {
-		return "Imposto bruto total: %.2f%n" + netTax();
-	}
 }

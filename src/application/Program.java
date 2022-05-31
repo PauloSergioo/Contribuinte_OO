@@ -20,9 +20,8 @@ public class Program {
 		int N = sc.nextInt();
 		
 		for (int i=0; i<N; i++) {
-			System.out.printf("Digite os dados do %do contribuinte: %n", (i+1));
 			System.out.println();
-			
+			System.out.printf("Digite os dados do %do contribuinte: %n", (i+1));
 			System.out.print("Renda anual com salário: ");
 			double salaryIncome = sc.nextDouble();
 			System.out.print("Renda anual com prestação de serviço: ");
@@ -36,22 +35,16 @@ public class Program {
 			System.out.println();
 			
 			list.add(new TaxPayer(salaryIncome, servicesIncome, capitalIncome, healthSpending, educationSpending));			
-		}
-		
-		
+		}		
 		
 		for (int i=0; i<N; i++) {
-			list.get(i).grossTax();
-		}
-		
-		
-		for (int i=0; i<N; i++) {
+			System.out.println();
 			System.out.printf("Resumo do %do contribuinte: %n", (i+1));
-			System.out.printf("Imposto bruto total: %.2f%n" );
-			System.out.printf("Abatimento: %.2f%n" );
-			System.out.printf("Imposto devido: %.2f%n" );
+			System.out.printf("Imposto bruto total: %.2f%n", list.get(i).grossTax()); 
+			System.out.printf("Abatimento: %.2f%n", list.get(i).taxRebate());
+			System.out.printf("Imposto devido: %.2f%n", list.get(i).netTax());
 		}
-
+		
 		sc.close();
 	}
 
